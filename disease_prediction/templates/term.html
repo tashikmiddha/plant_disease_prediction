@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+ 
+
+    .hea {
+      background-color: #388e3c;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .hea h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .mai{
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .sec {
+      margin-bottom: 40px;
+    }
+
+    .sec h2 {
+      color: black;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #c5e1a5;
+      padding-bottom: 10px;
+    }
+
+    .sec p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    .accordion2 {
+      background-color: #e8f5e9;
+      border: none;
+      outline: none;
+      width: 100%;
+      text-align: left;
+      padding: 15px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 5px;
+    }
+
+    .accordion2:hover {
+      background-color: #dcedc8;
+    }
+
+    .panel2 {
+      padding: 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: #ffffff;
+      border-left: 3px solid #388e3c;
+    }
+    .te{
+        margin-top: 5%;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+<div class="te">
+
+
+  <header class="hea">
+    <h1>Terms of Use - PlantDoc</h1>
+    <p>Please read these terms carefully before using our service</p>
+  </header>
+
+  <main class="mai">
+    <section class="sec">
+      <h2>Overview</h2>
+      <p>By using PlantDoc, you agree to comply with and be bound by these Terms of Use. These terms govern your access to and use of our website, services, and AI-based tools.</p>
+    </section>
+
+    <section class="sec">
+      <h2>Usage Guidelines</h2>
+      <button class="accordion2">1. Personal Use Only</button>
+      <div class="panel2">
+        <p>PlantDoc is designed for personal, educational, and research use. Commercial usage without written permission is strictly prohibited.</p>
+      </div>
+
+      <button class="accordion2">2. Image Upload Policy</button>
+      <div class="panel2">
+        <p>You may upload plant images for analysis. Ensure that you have the right to use and share those images. Do not upload harmful or offensive content.</p>
+      </div>
+
+      <button class="accordion2">3. No Medical or Agricultural Guarantees</button>
+      <div class="panel2">
+        <p>PlantDoc provides AI-generated predictions. These should not replace professional agricultural advice. We do not guarantee 100% accuracy of diagnoses.</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2>Intellectual Property</h2>
+      <button class="accordion2">1. Ownership</button>
+      <div class="panel2">
+        <p>All content on PlantDoc, including code, models, design, and branding, is owned by us or our licensors and protected by copyright laws.</p>
+      </div>
+
+      <button class="accordion2">2. Restrictions</button>
+      <div class="panel2">
+        <p>You may not copy, distribute, modify, or reverse-engineer any part of the service without explicit permission.</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2>Limitation of Liability</h2>
+      <p>
+        PlantDoc is provided "as is". We are not liable for any indirect, incidental, or consequential damages resulting from use or inability to use the service.
+      </p>
+    </section>
+
+    <section class="sec">
+      <h2>Account Termination</h2>
+      <p>
+        We reserve the right to suspend or terminate access if users violate these terms or misuse the service in any way.
+      </p>
+    </section>
+
+    <section class="sec">
+      <h2>Changes to Terms</h2>
+      <p>
+        We may update these Terms of Use from time to time. Continued use after changes constitutes acceptance of the updated terms.
+      </p>
+    </section>
+  </main>
+  </div>
+
+
+  <script>
+    const acc = document.querySelectorAll(".accordion2");
+    acc.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+
+{% endblock content %}

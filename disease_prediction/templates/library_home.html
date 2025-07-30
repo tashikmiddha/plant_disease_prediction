@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+    .folder-st {
+        padding: 40px;
+        text-align: center;
+        margin-top:5%;
+
+    }
+
+    .folder-st h2 {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .folder-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    .folder {
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        color: #333;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .folder:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .folder h4 {
+        font-size: 1.4em;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .folder p {
+        margin: 0;
+        font-size: 1em;
+        color: #555;
+    }
+
+    @media screen and (max-width: 600px) {
+        .folder-st {
+            padding: 20px;
+        }
+
+        .folder h4 {
+            font-size: 1.2em;
+        }
+    }
+</style>
+
+<div class="folder-st">
+    <h2>🌿 Leaf Disease Library - Plant Folders</h2>
+    <div class="folder-grid">
+        {% for plant in plants %}
+        <div class="folder" onclick="location.href='{% url 'plant_gallery' plant.plant_name %}'">
+            <h4>{{ plant.plant_name }}</h4>
+            <p>{{ plant.image_count }} Images</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

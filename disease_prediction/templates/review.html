@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="review-page">
+  <section class="review-form-section">
+    <div class="form-header">
+      <h2>💬 Submit Your Review</h2>
+    </div>
+    <form method="post" class="review-form" id="reviewForm">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="re-submit" type="submit">Submit Review</button>
+    </form>
+  </section>
+
+  <section class="review-list-section">
+    <h2>🌟 All Reviews</h2>
+    {% for review in reviews %}
+      <div class="review-box">
+        <div class="review-header">
+          <strong>{{ review.name }}</strong>
+          <span class="review-rating">⭐ {{ review.rating }}/5</span>
+        </div>
+        <div class="review-meta">
+          <small>{{ review.email }} • {{ review.created_at|date:"M d, Y H:i" }}</small>
+        </div>
+        <p class="review-content">{{ review.content }}</p>
+      </div>
+    {% empty %}
+      <p class="no-reviews">No reviews yet. Be the first!</p>
+    {% endfor %}
+  </section>
+</div>
+
+<script>
+document.getElementById('reviewForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  Swal.fire({
+    title: 'Thank you!',
+    text: 'Your review has been submitted.',
+    icon: 'success',
+    confirmButtonText: 'OK'
+  }).then(() => {
+    e.target.submit();
+  });
+});
+</script>
+{% endblock content %}

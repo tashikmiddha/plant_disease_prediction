@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="hero">
+    <h1>Detect Plant Diseases with AI</h1>
+    <p>Upload images of your crops and get instant disease prediction using powerful DL models.</p>
+    <a href="https://www.linkedin.com/" target="_blank"><button class="join">Join Us</button></a>
+    <a href="https://www.linkedin.com/" target="_blank"><button class="connect">Connect with us on Linkdin</button></a>
+</section>
+<div class="features">
+    <p>Plant diseases can devastate entire crops, threatening food security and farmer livelihoods. Fungi, bacteria,
+        viruses, and pests are constantly evolving, making it essential for growers to stay informed and proactive.
+        Early diagnosis, proper soil care, and sustainable practices can mean the difference between a bountiful season
+        and a lost one. Education and technology are our most powerful tools in protecting crops from the unseen enemies
+        they face every day.</p>
+</div>
+
+<div class="center-container1">
+    <div class="left">
+        <img src={% static "/media/image1.png" %} alt="Phone showing plant disease app" />
+    </div>
+    <div class="right">
+        <h2>Identify and cure plant diseases with <strong>PlantDoc</strong></h2>
+        <p>Is your green buddy dying?Try the Blossom app to identify the cause and get extensive disease and care info
+            in a snap.</p>
+        <a href="../m1/"><button>Diagnose now</button></a>
+    </div>
+</div>
+
+<div class="center-container2">
+    <h2>Personal plant doctor in your pocket</h2>
+    <p>Have you ever searched ‘what’s wrong with my plant’? The results may have been disappointing… No more with
+        PlantDoc! Simply snap a photo of the issue to get a diagnosis. PlantDoc will give you detailed info on the
+        disease, what caused it, how to treat it, and how to prevent it.</p>
+</div>
+<div class="center-container3">
+  <div class="column left">
+    <div class="column-content">
+      <p>Plant Doc App is your smart assistant for identifying plant diseases using AI. Snap a photo and get instant diagnosis and treatment suggestions.</p>
+    </div>
+  </div>
+  <div class="column right">
+    <div class="column-content">
+      <p>Our website provides detailed plant care guides, disease databases, and community support. Stay connected to keep your plants healthy!</p>
+    </div>
+  </div>
+</div>
+{% endblock content %}

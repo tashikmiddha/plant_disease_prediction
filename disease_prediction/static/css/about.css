@@ -1,0 +1,95 @@
+.about-container {
+  padding: 40px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+.flex-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 60px 0;
+  gap: 40px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.text h2 {
+  color: #27ae60;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-on-hover img:hover {
+  transform: scale(1.05);
+}
+
+.between-sections {
+  text-align: center;
+  font-style: italic;
+  margin: 40px 0;
+  font-size: 18px;
+}
+
+.main-container {
+  margin-top: 80px;
+}
+
+.section-title {
+  font-size: 32px;
+  margin: 20px 0;
+  color: #34495e;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.profile-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+}
+
+.profile-card img {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border: 3px solid #2ecc71;
+}
+
+.card-info {
+  margin-top: 10px;
+  background: #2ecc71;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

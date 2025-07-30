@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+.m1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px;
+    background-color: #f4fdf7;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    height: 100vh;
+    margin-top: 5%;
+}
+.m1-left, .m1-right {
+    flex: 1;
+    min-width: 300px;
+}
+h1 {
+    color: #2e7d32;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d0e2d0;
+}
+.re-submit {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.re-submit:hover {
+    background-color: #27692b;
+}
+.preview-image {
+    display: none;
+    margin-top: 15px;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.step-box {
+    background: #e6f9ec;
+    padding: 15px;
+    border-left: 5px solid #2e7d32;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+.step-box img {
+    width: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.step-box p {
+    display: inline;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+</style>
+
+<div class="m1">
+
+    <div class="m1-left">
+        <h1>🌿 Plant Disease Predictor</h1>
+
+        <div class="step-box">
+            
+            <p><strong>Step 1:</strong> Upload a leaf image</p>
+        </div>
+        <div class="step-box">
+        
+            <p><strong>Step 2:</strong> Click on Predict button</p>
+        </div>
+        <div class="step-box">
+            <p><strong>Step 3:</strong> View the prediction result on the right</p>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <img id="previewImage" class="preview-image" src="#" alt="Preview">
+            <button class="re-submit" type="submit">🔍 Predict</button>
+        </form>
+    </div>
+
+    <div class="m1-right">
+        <h2>🧪 Prediction Result</h2>
+        {% if prediction %}
+            <h3 style="color: #1b5e20;">Prediction: <em>{{ prediction }}</em></h3>
+            <img src="{{ image_url }}" width="300px" style="margin-top: 10px; border-radius: 8px;">
+        {% else %}
+            <p>Prediction will appear here after uploading an image and clicking "Predict".</p>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+  const fileInput = document.querySelector('input[type="file"]');
+  const previewImage = document.getElementById('previewImage');
+
+  fileInput.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+      previewImage.style.display = 'block';
+      previewImage.src = URL.createObjectURL(file);
+    } else {
+      previewImage.style.display = 'none';
+    }
+  });
+</script>
+
+{% endblock content %}
+
+

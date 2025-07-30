@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<section class="about-container">
+
+  <div class="intro fade-in">
+    <p>
+      🌿 Welcome to our green and intelligent corner of the web! This website is part of a cutting-edge project by
+      <strong>Awadh Lab at the Indian Institute of Technology (IIT) Ropar</strong>, merging technology with plant science.
+      Our goal is to make plant care smarter through powerful AI tools.
+    </p>
+  </div>
+
+  <div class="flex-section fade-in">
+    <div class="text">
+      <h2>🌱 Plant Identification</h2>
+      <p>
+        Upload a plant picture and get instant results about its species. Our AI is trained on a diverse flora dataset, ensuring accuracy and ease.
+      </p>
+    </div>
+    <div class="image zoom-on-hover">
+      <img src="{% static '/media/image1.png' %}" alt="Plant Identification AI">
+    </div>
+  </div>
+
+  <p class="between-sections fade-in">
+    Whether you're a home gardener or a researcher, our intelligent tools help you make informed decisions and promote sustainable agriculture.
+  </p>
+
+  <div class="flex-section reverse fade-in">
+    <div class="image zoom-on-hover">
+      <img src="{% static '/media/image1.png' %}" alt="Disease Detection AI">
+    </div>
+    <div class="text">
+      <h2>🦠 Plant Disease Detection</h2>
+      <p>
+        Snap a photo, detect diseases early, and save your crops. Our AI helps you act fast, reducing losses and increasing productivity.
+      </p>
+    </div>
+  </div>
+
+  <p class="fade-in">
+    This project drives innovation in smart farming. Every image analyzed brings us closer to a greener, smarter future, powered by
+    <strong>Awadh Lab, IIT Ropar</strong>.
+  </p>
+
+  <div class="main-container fade-in">
+    <h1 class="section-title"> Supervisors</h1>
+    <div class="row upper-row">
+      <div class="profile-card">
+        <img src="{% static 'images/anurag.jpeg' %}" alt="Anurag Singh">
+        <div class="card-info">
+          <h4>Anurag Singh</h4>
+        </div>
+      </div>
+      <div class="profile-card">
+        <img src="{% static 'images/mahesh.jpeg' %}" alt="Mahesh Singh">
+        <div class="card-info">
+          <h4>Mahesh Singh</h4>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="section-title"> Project Members</h1>
+    <div class="row lower-row">
+      <div class="profile-card">
+        <img src="{% static 'images/tashik.jpeg' %}" alt="Tashik">
+        <div class="card-info">
+          <h4>Tashik</h4>
+        </div>
+      </div>
+      <div class="profile-card">
+        <img src="{% static 'images/yadav.png' %}" alt="Praduyumn">
+        <div class="card-info">
+          <h4>Praduyumn</h4>
+        </div>
+      </div>
+      <div class="profile-card">
+        <img src="{% static 'images/arun.png' %}" alt="Arun">
+        <div class="card-info">
+          <h4>Arun</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+  faders.forEach(el => observer.observe(el));
+</script>
+
+{% endblock content %}

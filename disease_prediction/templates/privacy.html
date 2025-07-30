@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .pr{
+        margin-top: 5%;
+    }
+    .he{
+      background-color: #4caf50;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .he h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .ma {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .se {
+      margin-bottom: 40px;
+    }
+
+    .se h2 {
+      color: black;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #c8e6c9;
+      padding-bottom: 10px;
+    }
+
+    .se p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    .accordion1 {
+      background-color: #f1f8f4;
+      border: none;
+      outline: none;
+      width: 100%;
+      text-align: left;
+      padding: 15px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 5px;
+    }
+
+    .accordion1:hover {
+      background-color: #dcedc8;
+    }
+
+    .panel1 {
+      padding: 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: #ffffff;
+      border-left: 3px solid #4caf50;
+    }
+
+
+    @media (max-width: 600px) {
+      .he h1 {
+        font-size: 1.8rem;
+      }
+
+      .se h2 {
+        font-size: 1.5rem;
+      }
+
+      .se p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+ <div class="pr">
+  <header class="he">
+    <h1>Privacy Policy - PlantDoc</h1>
+    <p>Your trust is our priority</p>
+  </header>
+
+  <main class="ma">
+    <section class="se">
+      <h2>Introduction</h2>
+      <p>
+        At PlantDoc, we value your privacy. This Privacy Policy outlines how we collect, use, and protect your information when you use our AI-powered plant disease prediction services.
+      </p>
+    </section>
+
+    <section class="se">
+      <h2>What We Collect</h2>
+      <p>When you use PlantDoc, we may collect:</p>
+      <ul>
+        <li>Plant images uploaded by users</li>
+        <li>Basic device/browser data for performance optimization</li>
+        <li>Optional contact info (if you register or contact us)</li>
+      </ul>
+    </section>
+
+    <section class="se">
+      <h2>How We Use Your Data</h2>
+      <button class="accordion1">1. Image Analysis with AI</button>
+      <div class="panel1">
+        <p>We use uploaded plant images solely to run disease detection models. We do not store images unless explicitly agreed by you for research or improvement purposes.</p>
+      </div>
+
+      <button class="accordion1">2. Improving Our Services</button>
+      <div class="panel1">
+        <p>We may analyze usage patterns (without identifying individuals) to improve model accuracy, user experience, and system performance.</p>
+      </div>
+
+      <button class="accordion1">3. Communication</button>
+      <div class="panel1">
+        <p>If you provide an email address, we may send you updates about the app or respond to inquiries.</p>
+      </div>
+    </section>
+
+    <section class="se">
+      <h2>Your Rights</h2>
+      <p>You have full control over your data:</p>
+      <ul>
+        <li>You can request deletion of your uploaded images.</li>
+        <li>You may opt-out of data sharing for research.</li>
+        <li>We never sell your personal data to third parties.</li>
+      </ul>
+    </section>
+
+    <section class="se">
+      <h2>Security</h2>
+      <p>
+        We use industry-standard encryption and secure protocols to protect your information. Access is restricted to authorized personnel only.
+      </p>
+    </section>
+
+    <section class="se">
+      <h2>Changes to Policy</h2>
+      <p>
+        This Privacy Policy may be updated periodically. We will notify users of any major changes and always maintain transparency.
+      </p>
+    </section>
+  </main>
+    </div>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion1");
+    acc.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+
+{% endblock content %}
