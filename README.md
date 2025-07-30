@@ -1,58 +1,95 @@
-🌿 Plant Disease Prediction Website
-This project is a Deep Learning-based web application for accurately predicting plant diseases through uploaded images. Users can simply upload an image of a plant leaf, and the system will identify and classify the disease using a trained deep learning model.
+# 🌿 Plant Disease Prediction Website
 
-Project developed under AWaDH Lab, sponsored by IIT Ropar.
+This project is a **Deep Learning-powered web application** designed to identify and classify diseases in plant leaves from uploaded images. By leveraging modern computer vision techniques, this tool helps farmers, researchers, and agricultural professionals diagnose plant health issues quickly and accurately.
 
-🚀 Features
-📸 Image Upload Interface – Upload a plant leaf image directly from your device.
+> 🧪 This project is a research initiative under the **AWaDH Lab**, sponsored by **IIT Ropar**.
 
-🧠 Deep Learning Model – Trained using state-of-the-art CNN architectures for plant disease classification.
+---
 
-⚡ Real-time Predictions – Get instant disease diagnosis with probability scores.
+## 📌 Table of Contents
 
-🌱 User-Friendly UI – Clean, responsive, and intuitive design for all users.
+- [Features](#features)
+- [Demo](#demo)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Model Details](#model-details)
+- [Project Structure](#project-structure)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
-🧪 Research-Grade – Suitable for agricultural diagnostics and academic research.
+---
 
-🛠️ Tech Stack
-Frontend: HTML, CSS, JavaScript (Bootstrap/React - if applicable)
+## 🚀 Features
 
-Backend: Flask / Django (depending on your implementation)
+- 📷 Upload a plant leaf image via a web interface.
+- 🤖 Get real-time disease prediction using a trained deep learning model.
+- 📊 View confidence scores for each disease class.
+- 💡 Clean, user-friendly interface for all levels of users.
+- 🔬 Designed for both academic and practical agricultural use.
 
-Model: Convolutional Neural Networks (CNN) using TensorFlow / PyTorch
+---
 
-Deployment: (e.g., Heroku, AWS, PythonAnywhere – update based on your deployment)
+## 🛠️ Tech Stack
 
-🧪 Model Training
-Trained on a curated dataset of plant leaf images.
+- **Frontend**: HTML5, CSS3, Bootstrap, JavaScript
+- **Backend**: Python, Flask (or Django)
+- **Model**: Convolutional Neural Networks (CNN) using TensorFlow or PyTorch
+- **Deployment**: (Heroku, AWS, PythonAnywhere, etc.)
 
-Preprocessing: Image resizing, normalization, data augmentation.
+---
 
-Architecture: Custom CNN / Transfer learning (e.g., ResNet, MobileNet, etc.)
+## 🔧 Installation
 
-Accuracy: ~XX% (update with your model’s performance)
+1. **Clone the Repository**
 
-🔧 Installation & Usage
-Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/plant-disease-predictor.git
+   cd plant-disease-predictor
+2.Create Virtual Environment (Optional but Recommended)
 
     ```bash
-    git clone https://github.com/yourusername/plant-disease-predictor.git
-    cd plant-disease-predictor
-Install dependencies
+     python -m venv venv
+     source venv/bin/activate  # On Windows: venv\Scripts\activate
+3. Install Dependencies
 
+   ```bash
+    pip install -r requirements.txt
+4.Run the Web App
 
     ```bash
-     pip install -r requirements.txt
-Run the server
+     python manage.py runserver
+5.Visit the App in Browser
+   http://localhost:5000
+🧠 Model Details
+Architecture: CNN / Transfer Learning (e.g., ResNet, MobileNet)
 
+Dataset: Publicly available plant leaf datasets
 
-📚 Acknowledgements
-IIT Ropar
+Preprocessing: Resizing, normalization, augmentation
 
+Training Metrics:
+
+Accuracy: 98% (replace with actual value)
+
+Classes: [List of diseases detected, e.g., Apple Scab, Tomato Mosaic Virus, etc.]
+
+✅ Usage Instructions
+Go to the homepage.
+
+Upload an image of a plant leaf.
+
+Click on Predict.
+
+View the disease diagnosis and confidence score.
+
+🙏 Acknowledgements
 AWaDH Lab – Agriculture and Water Technology Development Hub
 
-Open source contributors & dataset providers
+IIT Ropar – Indian Institute of Technology Ropar
 
-📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Open-source contributors and dataset providers
+
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
