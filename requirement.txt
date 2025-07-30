@@ -1,0 +1,16 @@
+Django>=4.2,<5.0
+gunicorn
+Pillow
+opencv-python
+numpy
+tensorflow  # Use this if you're using TensorFlow
+# torch torchvision torchaudio  # Uncomment this if using PyTorch instead
+
+djangorestframework
+scikit-learn
+matplotlib
+requests
+
+# Optional: for handling environment variables and CORS
+python-decouple
+django-cors-headers
